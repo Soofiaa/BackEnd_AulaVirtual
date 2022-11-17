@@ -9,7 +9,6 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 
-
 class UsuarioController extends BaseController
 {
     public function index()
@@ -22,11 +21,11 @@ class UsuarioController extends BaseController
     public function crearUsuario(Request $request)
     {
       $usuarios = new Usuario;
-      $usuario->email = is_null($request->email) ? $usuario->email : $request->email;
+      $usuarios->email = $request->email;
       $usuarios->password = $request->password;
       $usuarios->save();
       return response()->json([
-        "message" => "record created"
+        "message" => "Usuario creado"
     ], 201);
 
     }

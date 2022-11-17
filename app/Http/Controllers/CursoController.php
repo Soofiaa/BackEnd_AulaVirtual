@@ -20,27 +20,26 @@ class CursoController extends BaseController
     public function crearCurso(Request $request)
     {
       $cursos = new Curso;
-      $cursos->id = $request->id;
       $cursos->nombre = $request->nombre;
       $cursos->paralelo = $request->paralelo;
       $cursos->save();
       return response()->json([
-        "message" => "record created"
+        "message" => "Curso creado"
     ], 201);
     }
 
     public function EliminarCurso(Request $request,$id)
     {
-        if (Persona::where('rut', $id)->exists()) {
-            $personas = Persona::find($id);
+        if (Curso::where('id', $id)->exists()) {
+            $cursos = Curso::find($id);
 
-            $personas->delete();
+            $cursos->delete();
             return response()->json([
-                "message" => "Usuario eliminado"
+                "message" => "Curso eliminado"
             ], 202);
             } else {
             return response()->json([
-                "message" => "Usuario no encontrado"
+                "message" => "Curso no encontrado"
             ], 404);
             
         }

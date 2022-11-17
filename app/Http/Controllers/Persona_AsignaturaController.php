@@ -13,7 +13,7 @@ class Persona_AsignaturaController extends BaseController
 {
     public function index()
     {
-      $personas_asignaturas = Usuario::all();
+      $personas_asignaturas = Persona_Asignatura::all();
       return response($personas_asignaturas, 200);
 
     }
@@ -27,7 +27,7 @@ class Persona_AsignaturaController extends BaseController
       $personas_asignaturas->nota = $request->nota;
       $personas_asignaturas->save();
       return response()->json([
-        "message" => "record created"
+        "message" => "Ocurrencia creada"
     ], 201);
 
     }

@@ -13,7 +13,7 @@ class PersonaController extends BaseController
 {
     public function index()
     {
-      $personas = Persoba::all();
+      $personas = Persona::all();
       return response($personas, 200);
     }
 
@@ -28,7 +28,7 @@ class PersonaController extends BaseController
       $personas->nombre_curso = $request->nombre_curso;
       $personas->save();
       return response()->json([
-        "message" => "record created"
+        "message" => "Persona creada"
     ], 201);
 
     }
@@ -43,11 +43,11 @@ class PersonaController extends BaseController
             $personas->save();
     
             return response()->json([
-                "message" => "Usuario actualizado"
+                "message" => "Persona actualizada"
             ], 200);
             } else {
             return response()->json([
-                "message" => "Usuario no encontrado"
+                "message" => "Persona no encontrada"
             ], 404);
             
         }

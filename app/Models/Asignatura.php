@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Asignatura extends Model
 {
     use HasFactory;
+
+    // Disable the model timestamps
+    public $timestamps = false;
 }

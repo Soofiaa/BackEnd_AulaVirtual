@@ -14,7 +14,14 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'crearusuario', 
         'modificarusuario/*',
-        'eliminarusuario/*'
-
+        'eliminarusuario/*',
+        'crearpersona/',
+        'modificarpersona/*',
+        'crearasignatura',
+        'eliminarasignatura/*',
+        'crearcurso',
+        'eliminarcurso/*',
+        'crearpersona_asignatura',
+        'crearrol'
     ];
 }

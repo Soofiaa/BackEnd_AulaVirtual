@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\AsignaturaController;
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\Persona_AsignaturaController;
+use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\RolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,31 +33,28 @@ Route::controller(UsuarioController::class)->group(function () {
 Route::controller(PersonaController::class)->group(function () {
     Route::get('/persona', 'index');
     Route::post('/crearpersona', 'crearPersona');
-    Route::put('/modificarPersona/{id}', 'modificarPersona');
+    Route::put('/modificarpersona/{id}', 'ModificarPersona');
 });
 
-Route::controller(Rolontroller::class)->group(function () {
+Route::controller(RolController::class)->group(function () {
     Route::get('/rol', 'index');
     Route::post('/crearrol', 'crearRol');
 });
 
-Route::controller(Rolontroller::class)->group(function () {
-    Route::get('/rol', 'index');
-    Route::post('/crearrol', 'crearRol');
-});
-
-Route::controller(Asignaturaontroller::class)->group(function () {
+Route::controller(AsignaturaController::class)->group(function () {
     Route::get('/asignatura', 'index');
     Route::post('/crearasignatura', 'crearAsignatura');
-    Route::put('/modificarasignatura/{id}', 'modificarAsignatura');
+    Route::put('/modificarasignatura/{id}', 'ModificarAsignatura');
+    Route::delete('/eliminarasignatura/{id}', 'EliminarAsignatura');
 });
 
-Route::controller(Cursoontroller::class)->group(function () {
+Route::controller(CursoController::class)->group(function () {
     Route::get('/curso', 'index');
     Route::post('/crearcurso', 'crearCurso');
+    Route::delete('/eliminarcurso/{id}', 'EliminarCurso');
 });
 
-Route::controller(Persona_Asignaturaontroller::class)->group(function () {
+Route::controller(Persona_AsignaturaController::class)->group(function () {
     Route::get('/persona_asignatura', 'index');
-    Route::post('/crearpersona_asignatura', 'crearPersona_Asignatura');
+    Route::post('/crearpersona_asignatura', 'CrearPersona_Asignatura');
 });
