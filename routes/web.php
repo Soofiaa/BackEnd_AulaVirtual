@@ -24,3 +24,35 @@ Route::controller(UsuarioController::class)->group(function () {
     Route::put('/modificarusuario/{id}', 'modificarUsuario');
     Route::delete('/eliminarusuario/{id}', 'EliminarUsuario');
 });
+
+Route::controller(PersonaController::class)->group(function () {
+    Route::get('/persona', 'index');
+    Route::post('/crearpersona', 'crearPersona');
+    Route::put('/modificarPersona/{id}', 'modificarPersona');
+});
+
+Route::controller(Rolontroller::class)->group(function () {
+    Route::get('/rol', 'index');
+    Route::post('/crearrol', 'crearRol');
+});
+
+Route::controller(Rolontroller::class)->group(function () {
+    Route::get('/rol', 'index');
+    Route::post('/crearrol', 'crearRol');
+});
+
+Route::controller(Asignaturaontroller::class)->group(function () {
+    Route::get('/asignatura', 'index');
+    Route::post('/crearasignatura', 'crearAsignatura');
+    Route::put('/modificarasignatura/{id}', 'modificarAsignatura');
+});
+
+Route::controller(Cursoontroller::class)->group(function () {
+    Route::get('/curso', 'index');
+    Route::post('/crearcurso', 'crearCurso');
+});
+
+Route::controller(Persona_Asignaturaontroller::class)->group(function () {
+    Route::get('/persona_asignatura', 'index');
+    Route::post('/crearpersona_asignatura', 'crearPersona_Asignatura');
+});
