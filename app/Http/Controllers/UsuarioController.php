@@ -21,7 +21,7 @@ class UsuarioController extends BaseController
     public function crearUsuario(Request $request)
     {
       $usuarios = new Usuario;
-      $usuarios->email = $request->email;
+      $usuarios->rut = $request->rut;
       $usuarios->password = $request->password;
       $usuarios->save();
       return response()->json([
@@ -34,7 +34,7 @@ class UsuarioController extends BaseController
     {
         if (Usuario::where('id', $id)->exists()) {
             $usuario = Usuario::find($id);
-            $usuario->email = is_null($request->email) ? $student->email : $request->email;
+            $usuario->rut = is_null($request->rut) ? $student->rut : $request->rut;
             $usuario->password = is_null($request->password) ? $usuario->password : $request->password;
             $usuario->save();
     

@@ -19,7 +19,7 @@ class CreatePersonaTable extends Migration
             $table->string("nombre");
             $table->string("apellido");
             $table->string("email");
-            $table->string("nombre_curso");
+            $table->integer("id_curso");
             $table->timestamps();
         });
     }

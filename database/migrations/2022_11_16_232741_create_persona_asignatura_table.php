@@ -14,6 +14,7 @@ class CreatePersonaAsignaturaTable extends Migration
     public function up()
     {
         Schema::create('personas_asignaturas', function (Blueprint $table) {
+            $table->id();
             $table->integer("id_asignatura");
             $table->string("rut_alumno");
             $table->integer("id_evaluacion");

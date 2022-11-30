@@ -21,7 +21,6 @@ class CursoController extends BaseController
     {
       $cursos = new Curso;
       $cursos->nombre = $request->nombre;
-      $cursos->paralelo = $request->paralelo;
       $cursos->save();
       return response()->json([
         "message" => "Curso creado"
