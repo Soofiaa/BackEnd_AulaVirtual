@@ -57,4 +57,6 @@ Route::controller(CursoController::class)->group(function () {
 Route::controller(Persona_AsignaturaController::class)->group(function () {
     Route::get('/persona_asignatura', 'index');
     Route::post('/crearpersona_asignatura', 'CrearPersona_Asignatura');
+    Route::put('/modificarpersona_asignatura/{id}', 'ModificarPersona_Asignatura');
+    Route::delete('/eliminarpersona_asignatura/{id}', 'EliminarPersona_Asignatura');
 });
