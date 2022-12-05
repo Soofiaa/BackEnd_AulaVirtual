@@ -14,10 +14,9 @@ class CreateAsignaturaTable extends Migration
     public function up()
     {
         Schema::create('asignaturas', function (Blueprint $table) {
-            $table->id();
-            $table->string("nombre");
-            $table->string("nombre_profesor");
-            $table->string("apellido_profesor");
+            $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->unsignedBigInteger('rut_profesor');                       
         });
     }
 

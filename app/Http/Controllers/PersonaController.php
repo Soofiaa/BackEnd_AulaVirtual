@@ -22,10 +22,10 @@ class PersonaController extends BaseController
       $personas = new Persona;
       $personas->rut = $request->rut;
       $personas->id_rol = $request->id_rol;
+      $personas->id_curso = $request->id_curso;
       $personas->nombre = $request->nombre;
       $personas->apellido = $request->apellido;
       $personas->email = $request->email;
-      $personas->id_curso = $request->id_curso;
       $personas->save();
       return response()->json([
         "message" => "Persona creada"
@@ -38,8 +38,10 @@ class PersonaController extends BaseController
         if (Persona::where('rut', $id)->exists()) {
             $personas = Persona::find($id);
             $personas->id_rol = is_null($request->id_rol) ? $personas->id_rol : $request->id_rol;
-            $personas->email = is_null($request->email) ? $personas->email : $request->email;
             $personas->id_curso = is_null($request->id_curso) ? $personas->id_curso : $request->id_curso;
+            $personas->nombre = is_null($request->nombre) ? $personas->nombre : $request->nombre;
+            $personas->apellido = is_null($request->apellido) ? $personas->apellido : $request->apellido;
+            $personas->email = is_null($request->email) ? $personas->email : $request->email;
             $personas->save();
     
             return response()->json([

@@ -18,10 +18,12 @@ class VerifyCsrfToken extends Middleware
         'crearpersona/',
         'modificarpersona/*',
         'crearasignatura',
+        'modificarasignatura/*',
         'eliminarasignatura/*',
         'crearcurso',
         'eliminarcurso/*',
         'crearpersona_asignatura',
+        'modificarpersona_asignatura/*',
         'crearrol'
     ];
 }

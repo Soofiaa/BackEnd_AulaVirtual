@@ -14,11 +14,14 @@ class CreatePersonaAsignaturaTable extends Migration
     public function up()
     {
         Schema::create('personas_asignaturas', function (Blueprint $table) {
-            $table->id();
-            $table->integer("id_asignatura");
-            $table->string("rut_alumno");
-            $table->integer("id_evaluacion");
-            $table->float("nota");
+            // TABLA QUE EXISTE Y SE REFERENCIA SÓLO SI LA PERSONA TIENE ROL=2 (alumno)
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('id_asignatura');
+            $table->unsignedBigInteger('id_curso');
+            $table->unsignedBigInteger('rut_alumno');
+            $table->integer('id_evaluacion');
+            $table->float('nota');
+            $table->timestamps();
         });
     }
 

@@ -21,11 +21,10 @@ class RolController extends BaseController
     public function crearRol(Request $request)
     {
       $roles = new Rol;
-      $roles->id = $request->id;
       $roles->nombre = $request->nombre;
       $roles->save();
       return response()->json([
-        "message" => "record created"
-    ], 201);
+        "message" => "Rol creado"
+      ], 201);
     }
 }

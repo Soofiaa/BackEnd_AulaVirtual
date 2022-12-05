@@ -34,7 +34,7 @@ class UsuarioController extends BaseController
     {
         if (Usuario::where('id', $id)->exists()) {
             $usuario = Usuario::find($id);
-            $usuario->rut = is_null($request->rut) ? $student->rut : $request->rut;
+            $usuario->rut = is_null($request->rut) ? $usuario->rut : $request->rut;
             $usuario->password = is_null($request->password) ? $usuario->password : $request->password;
             $usuario->save();
     

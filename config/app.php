@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        \ESolution\DBEncryption\Providers\DBEncryptionServiceProvider::class,
 
         /*
          * Package Service Providers...

@@ -21,8 +21,7 @@ class AsignaturaController extends BaseController
     {
       $asignaturas = new Asignatura;
       $asignaturas->nombre = $request->nombre;
-      $asignaturas->nombre_profesor = $request->nombre_profesor;
-      $asignaturas->apellido_profesor = $request->apellido_profesor;
+      $asignaturas->rut_profesor = $request->rut_profesor;
       $asignaturas->save();
       return response()->json([
         "message" => "Asignatura creada"
@@ -33,9 +32,8 @@ class AsignaturaController extends BaseController
     {
         if (Asignatura::where('id', $id)->exists()) {
             $asignatura = Asignatura::find($id);
-            $asignatura->nombre = is_null($request->nombre) ? $student->nombre : $request->nombre;
-            $asignatura->nombre_profesor = is_null($request->nombre_profesor) ? $asignatura->nombre_profesor : $request->nombre_profesor;
-            $asignatura->apellido_profesor = is_null($request->apellido_profesor) ? $asignatura->apellido_profesor : $request->apellido_profesor;
+            $asignatura->nombre = is_null($request->nombre) ? $asignatura->nombre : $request->nombre;
+            $asignatura->rut_profesor = is_null($request->rut_profesor) ? $asignatura->rut_profesor : $request->rut_profesor;
             $asignatura->save();
     
             return response()->json([

@@ -14,12 +14,12 @@ class CreatePersonaTable extends Migration
     public function up()
     {
         Schema::create('personas', function (Blueprint $table) {
-            $table->id("rut");
-            $table->integer("id_rol");
-            $table->string("nombre");
-            $table->string("apellido");
-            $table->string("email");
-            $table->integer("id_curso");
+            $table->id('rut'); 
+            $table->unsignedBigInteger('id_rol');
+            $table->unsignedBigInteger('id_curso');                 
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('email');       
             $table->timestamps();
         });
     }
